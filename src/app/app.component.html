@@ -1,0 +1,58 @@
+<div class="container"><!-- Main Container -->
+  <div class="row">
+      <div class="col-md-3 col-lg-4"></div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <h1 class="text-center text-danger">Rogers Demo</h1>
+        <form name="form" (ngSubmit)="addData()" #f="ngForm" novalidate>
+          <label for="txtInputName">Enter Item Name: </label>
+          <div class="input-group mb-3"> 
+            <input type="text" class="form-control inputItem" id="txtInputName" name="txtInputName" [(ngModel)]="model.txtInputName" #name="ngModel" placeholder="name" required>
+            <div class="input-group-append">
+              <!--<button class="btn btn-outline-secondary btn-custom" (click)="addData(name.value)" type="button">Submit</button>-->
+              <input type="submit" name="submit" value="Submit" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3 col-lg-4"></div>
+  </div><!-- For Input value section -->
+
+  <div class="row">
+      <div class="col-md-3 col-lg-4"></div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <fieldset class="border p-2">
+          <legend class="w-auto"><h2 class="font-weight-bold"><small> Unpacked (<span class="badge"> {{rogersArray.length ? rogersArray.length :  0}}</span>)</small></h2></legend>         
+          <label for="txtSearchUnchecked">Search Unpacked Item: </label>
+          <div class="input-group mb-3">          
+            <input type="text" class="form-control search" id="txtSearchUnchecked" name="txtSearchUnchecked" #txtSearchUnchecked placeholder="Search unpacked item here...." (input)="searchUnchecked(txtSearchUnchecked.value)">
+          </div>
+          <div *ngFor="let rgtext of rogersArray; let i = index">
+            <input type="checkbox" name="chkname[]" id="{{i}}" #{{i}} value="{{rgtext}}" (click) = "removeToNext(rgtext)" />
+            <label class="text-capitalize decorate"  attr.for="{{i}}"> {{rgtext}} <a href="javascript:void(0);" class="badge badge-danger" (click)="removeSingleUnCheckedItem(rgtext)">Remove</a></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="col-md-3 col-lg-4"></div>
+  </div><!-- For Unpacked list -->
+
+  <div class="row">
+      <div class="col-md-3 col-lg-4"></div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <fieldset class="border p-2">
+          <legend class="w-auto">
+            <h2><small> Packed (<span class="badge"> {{updatedArray.length ? updatedArray.length :  0}}</span>)</small></h2>
+          </legend>
+          <label for="txtSearchChecked">Search Packed Item:</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control search" id="txtSearchChecked" name="txtSearchChecked" #txtSearchChecked placeholder="Search checked item here...." (input)="searchChecked(txtSearchChecked.value)">
+          </div>
+          <div *ngFor="let checkedItem of updatedArray; let ind = index">
+            <input type="checkbox" checked name="chkNewName[]" #{{ind+rogersArray.length}} id="{{ind+rogersArray.length}}" value={{checkedItem}} (click)="backToExist(checkedItem)" />
+            <label class="text-capitalize decorate" attr.for="{{ind+rogersArray.length}}">{{checkedItem}} <a href="javascript:void(0);" class="badge badge-danger" (click)="removeSingleCheckedItem(checkedItem)">Remove</a></label>
+          </div>
+          <button type="button" class="btn btn-danger btn-lg btn-block" (click)="markAllUnpacked();">Mark All As Unpacked</button>
+        </fieldset>
+      </div>
+      <div class="col-md-3 col-lg-4"></div>
+  </div><!-- For packed List -->
+</div><!-- End of main container -->

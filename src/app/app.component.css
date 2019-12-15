@@ -1,0 +1,38 @@
+.btn-custom{
+  background-color: #ce294e; 
+  border: 1px solid #e10d3d;
+  color: white;
+  transition: all 0.2s; 
+}
+input[type="submit"]{
+  background-color: #972e46;
+  border: 1px solid #e10d3d;
+  color: white;
+  transition: all 0.2s;
+}
+button:hover, .button:hover, input[type="submit"]:hover, .btn-custom:hover {
+    background-color: #972e46;
+}
+.inputItem{
+    border: 1px solid #972e46;
+    background-color: #fbbfcd;
+}
+label{
+  color: #dc3545;
+}
+.search{
+    border: 1px solid #972e46;
+}
+.decorate{
+  padding: 0 0 0 5px;
+  cursor: pointer;
+}
+.error{
+  color: red;
+  font-size: 14px;
+  width: 100%;
+  display: block;
+}
+fieldset{
+  margin-bottom: 10px;
+}
