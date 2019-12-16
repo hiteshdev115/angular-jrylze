@@ -24,11 +24,9 @@ https://stackblitz.com/@hiteshdev115
 
 when you opne this repository you can see the "angular-jrylze" project repository.
 
-or you can run this url into your browser : https://stackblitz.com/edit/angular-jrylze
-
 click on this project and it will be going to stackblitz editor and preview so you can see all my angular component and design files.
 
-Preview Url : https://angular-jrylze.stackblitz.io
+or you can run this url into your browser : https://stackblitz.com/edit/angular-jrylze
 
 You can download it from this repo directly to your local computer.
 
