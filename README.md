@@ -22,7 +22,7 @@ If this project is not working in you local computer then follow below steps.
 
 https://stackblitz.com/@hiteshdev115
 
-when you opne this repository you can see the "angular-jrylze" project repository.
+when you open this repository you can see the "angular-jrylze" project repository.
 
 click on this project and it will be going to stackblitz editor and preview so you can see all my angular component and design files.
 
